@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/': (_) => const HomePage(),
         '/my-overlay': (_) => const VolumeBubble(),
       },
+      title: "Volume Controller",
       themeMode: ThemeMode.system,
       theme: ThemeData(
         primaryColor: Colors.white,
