@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    hideVolumeUI(true);
     VolumeController().showSystemUI = false;
     VolumeController().listener((volume) {
       setState(() {
@@ -28,7 +29,13 @@ class _HomePageState extends State<HomePage> {
   @override
   void dispose() {
     VolumeController().removeListener();
+    hideVolumeUI(false);
     super.dispose();
+  }
+
+  void hideVolumeUI(bool value) async {
+    await platform
+        .invokeMethod("chaneListenToVolume", {"listenToVolume": value});
   }
 
   Future<int> convert(int dp) async {
