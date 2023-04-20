@@ -42,15 +42,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: themeData.primaryColor,
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
+        elevation: 1,
+        backgroundColor: themeData.primaryColor,
+        shadowColor: themeData.textTheme.bodyLarge!.color,
         automaticallyImplyLeading: false,
-        title: const Text(
+        title: Text(
           'Volume Controller',
-          style: TextStyle(color: Colors.black),
+          style: themeData.textTheme.bodyLarge,
         ),
         centerTitle: true,
       ),
@@ -69,15 +72,13 @@ class _HomePageState extends State<HomePage> {
                       'assets/volume-up.png',
                       height: 35,
                       width: 37,
-                      color: Colors.black,
+                      color: themeData.textTheme.bodyLarge!.color,
                     ),
                     const SizedBox(width: 6),
                     Text(
                       (_deviceVolume * 100).ceil().toString(),
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style:
+                          themeData.textTheme.bodyLarge!.copyWith(fontSize: 24),
                     )
                   ],
                 ),
@@ -89,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: Slider(
                     value: _deviceVolume,
-                    activeColor: Colors.blue,
+                    activeColor: const Color(0xff007AFF),
                     inactiveColor: const Color(0xffD9D9D9),
                     min: 0,
                     max: 1,
@@ -122,7 +123,8 @@ class _HomePageState extends State<HomePage> {
                           alignment: OverlayAlignment.centerLeft,
                           visibility: NotificationVisibility.visibilityPrivate,
                           positionGravity: PositionGravity.auto,
-                          overlayTitle: 'Volume control',
+                          overlayTitle: 'Volume Control',
+                          overlayContent: 'This app is controlling your volume',
                           height: await convert(60),
                           width: await convert(70),
                         );
@@ -132,20 +134,24 @@ class _HomePageState extends State<HomePage> {
                         alignment: Alignment.center,
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         decoration: BoxDecoration(
-                          color: Colors.blue,
                           borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: const Color(0xff007AFF),
+                            width: 1.5,
+                          ),
                         ),
-                        child: const Text(
-                          'Show Overlay',
+                        child: Text(
+                          'Show Control',
                           style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
+                            color: themeData.textTheme.bodyLarge!.color!
+                                .withOpacity(0.8),
+                            fontSize: 17,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(width: 10),
+                    const SizedBox(width: 15),
                     GestureDetector(
                       onTap: () {
                         FlutterOverlayWindow.closeOverlay();
@@ -155,15 +161,18 @@ class _HomePageState extends State<HomePage> {
                         alignment: Alignment.center,
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         decoration: BoxDecoration(
-                          color: Colors.blue,
                           borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: themeData.textTheme.bodyLarge!.color!
+                                .withOpacity(0.8),
+                            width: 1.5,
+                          ),
                         ),
-                        child: const Text(
-                          'Remove Overlay',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
+                        child: Text(
+                          'Hide Control',
+                          style: themeData.textTheme.bodyLarge!.copyWith(
+                            fontSize: 17,
+                            color: const Color(0xff007AFF),
                           ),
                         ),
                       ),

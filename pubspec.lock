@@ -129,10 +129,9 @@ packages:
   flutter_overlay_window:
     dependency: "direct main"
     description:
-      name: flutter_overlay_window
-      sha256: "9373e973e531325c1c44587d96fd7c9659ff58b5bdb1a006fc178b7dbb341a6d"
-      url: "https://pub.dev"
-    source: hosted
+      path: "/Users/niza/AndroidStudioProjects/flutter_overlay_window"
+      relative: false
+    source: path
     version: "0.4.1"
   flutter_svg:
     dependency: "direct main"

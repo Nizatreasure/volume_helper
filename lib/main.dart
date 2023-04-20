@@ -12,6 +12,8 @@ void main() async {
       SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent));
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight
   ]);
   runApp(const MyApp());
 }
@@ -39,6 +41,37 @@ class MyApp extends StatelessWidget {
         '/': (_) => const HomePage(),
         '/my-overlay': (_) => const VolumeBubble(),
       },
+      themeMode: ThemeMode.system,
+      theme: ThemeData(
+        primaryColor: Colors.white,
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.normal,
+          ),
+          bodyLarge: TextStyle(
+            color: Colors.black,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      darkTheme: ThemeData(
+        primaryColor: Colors.black,
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.normal,
+          ),
+          bodyLarge: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }
