@@ -12,8 +12,7 @@ void main() async {
       SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent));
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
-    DeviceOrientation.landscapeLeft,
-    DeviceOrientation.landscapeRight
+    DeviceOrientation.portraitDown,
   ]);
   runApp(const MyApp());
 }

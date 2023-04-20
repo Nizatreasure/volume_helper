@@ -35,10 +35,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_overlay_window:
-    path: /Users/niza/AndroidStudioProjects/flutter_overlay_window
-    # git:
-    #   url: https://github.com/nizatreasure/flutter_overlay_window.git
-    #   ref: 58c6d6e
+    # path: /Users/niza/AndroidStudioProjects/flutter_overlay_window
+    git:
+      url: https://github.com/nizatreasure/flutter_overlay_window.git
+      ref: de701bc
   volume_controller: ^2.0.6
   flutter_svg: ^2.0.4
 

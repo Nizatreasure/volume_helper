@@ -145,9 +145,11 @@ packages:
   flutter_overlay_window:
     dependency: "direct main"
     description:
-      path: "/Users/niza/AndroidStudioProjects/flutter_overlay_window"
-      relative: false
-    source: path
+      path: "."
+      ref: de701bc
+      resolved-ref: de701bca72325df6754c56c341a1649187e3caec
+      url: "https://github.com/nizatreasure/flutter_overlay_window.git"
+    source: git
     version: "0.4.1"
   flutter_svg:
     dependency: "direct main"
